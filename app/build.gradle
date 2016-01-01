@@ -12,6 +12,10 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            resValue "string", "google_api_key", new File('google_api_key.txt').text
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -24,4 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.android.gms:play-services-nearby:8.4.0'
 }
